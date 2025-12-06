@@ -10,19 +10,19 @@
 #  INGAT!!
 
 1. Kode didesain untuk terdapat banyak kesalahan, maka dari itu. Perbaiki kode agar dapat berjalan sesuai yang diharapkan. 
-
 2. Jalankan Program dari setiap folder pertemuan, jika tidak maka akan konflik pada `public static void main args`
 
 ## Soal Pengayaan
 
-Jawab Setiap file `Pengayaan.txt` di masing-masing file pengayaan, untuk pertanyaan refleksi terkait konsep OOP yang dipelajari di pertemuan tersebut. (tidak usah bikin file baru, langsung kerjakan di txt itu)
-
+Jawab Setiap file `Pengayaan.txt` di masing-masing file pengayaan, untuk pertanyaan refleksi terkait konsep OOP yang dipelajari di pertemuan tersebut. (tidak usah bikin file baru, langsung kerjakan di txt itu).
 
 ## Pengumpulan Tugas
 
-### Langkah-langkah Upload ke GitHub
-
- Buat pdf laporan pada setiap pertemuan, yang berisikan alur kerja, fungsi-fungsi, dan output dari program pada pertemuan tersebut.
+1. Kerjakan seluruh soal pada setiap pertemuan.
+2. Lengkapi bagian kode yang masih rumpang sesuai instruksi soal.
+3. Jawab seluruh pertanyaan pada bagian pengayaan.
+4. Buat laporan dalam bentuk PDF untuk setiap pertemuan yang memuat alur kerja, fungsi yang digunakan, dan hasil output program. Simpan laporan pada folder pertemuan masing-masing.
+5. Kemudian unggah repository ke GitHub.
 
 1. **Inisialisasi Git Repository**
 
