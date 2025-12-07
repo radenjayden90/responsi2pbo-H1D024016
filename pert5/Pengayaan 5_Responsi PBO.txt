@@ -1,7 +1,42 @@
 ﻿SOAL PENGAYAAN (Refleksi Polimorfisme)
 Jawablah pertanyaan berikut:
 1. Apa yang dimaksud dengan polimorfisme dalam OOP? Jelaskan bagaimana metode override bekerja.
+Jawaban:
+Polimorfisme dalam OOP:
+- Polimorfisme = "banyak bentuk" (poly = banyak, morph = bentuk)
+- Kemampuan objek untuk merespons secara berbeda terhadap method yang sama
+- Method override bekerja: child class mengganti implementasi method dari parent class
+- Contoh: nilaiPerforma() punya implementasi berbeda di setiap subclass
+
 2. Mengapa array bertipe DefaultMesin dapat menyimpan objek MesinMotor dan MesinTraktor?
+Jawaban:
+Mengapa array defaultMesin bisa menyimpan subclass:
+- Karena semua subclass adalah "jenis" dari defaultMesin (IS-A relationship)
+- MesinMotor adalah defaultMesin, MesinTraktor adalah defaultMesin
+- Ini contoh upcasting: menyimpan objek child ke variabel bertipe parent
+
 3. Apa perbedaan override dan overload?
+Jawaban:
+Perbedaan override dan overload:
+- Override: Method dengan nama dan parameter sama di parent dan child, mengganti implementasi
+- Overload: Beberapa method dengan nama sama tapi parameter berbeda dalam class yang sama
+- Contoh override: nilaiPerforma() di semua subclass
+- Contoh overload: Constructor dengan parameter berbeda
+
 4. Apa keuntungan menggunakan polimorfisme dalam sistem inventaris seperti contoh di atas?
+Jawaban:
+Keuntungan polimorfisme dalam inventaris:
+- Fleksibilitas: Bisa menambah jenis mesin baru tanpa mengubah kode yang ada
+- Code Reusability: Method umum seperti tampilInfo() bisa dipakai semua
+- Maintainability: Perubahan di satu tempat berlaku untuk semua
+- Scalability: Mudah menambah operasi baru (sorting, filtering) yang bekerja untuk semua jenis mesin
+
 5. Bagaimana cara kerja dynamic dispatch pada Java saat memanggil method override?
+Jawaban:
+Dynamic dispatch di Java:
+- Saat runtime, Java menentukan method mana yang akan dipanggil berdasarkan tipe aktual objek
+- Bukan berdasarkan tipe deklarasi variabel
+- Contoh:
+defaultMesin m = new mesinMotor(...);
+m.nilaiPerforma(); // Memanggil mesinMotor.nilaiPerforma(), bukan defaultMesin.nilaiPerforma()
+- Mekanisme ini disebut late binding atau runtime polymorphism

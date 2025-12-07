@@ -1,11 +1,56 @@
 [PERTANYAAN PENGAYAAN]
 
 1. Mengapa constructor di class Member wajib memanggil constructor Customer menggunakan super(...)?
+Jawaban:
+- Karena class Member mewarisi Customer, objek Member juga harus menginisialisasi atribut dari Customer
+- Java mewajibkan constructor child untuk memanggil constructor parent (eksplisit atau implisit)
+- Jika tidak ditulis, Java akan otomatis menambahkan super() (constructor tanpa parameter)
+- Dalam kasus ini, Customer tidak punya constructor tanpa parameter, jadi harus dipanggil eksplisit
 
 2. Apa tujuan memanggil super.tampilkanInfo() saat melakukan overriding method di subclass?
+Jawaban:
+- Untuk menghindari duplikasi kode (DRY - Don't Repeat Yourself)
+- Menggunakan kembali fungsionalitas yang sudah ada di parent class
+- Menjaga konsistensi output informasi dasar
+- Contoh: di Member hanya perlu menambah info poin dan level, tanpa menulis ulang kode untuk nama, ID, dan total belanja
 
 3. Berikan contoh kondisi di mana pemanggilan super.method() sangat penting dalam pewarisan.
+Jawaban:
+class Parent {
+    void proses() {
+        System.out.println("Proses dasar wajib dijalankan");
+        // Logika penting yang harus selalu dieksekusi
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void proses() {
+        super.proses(); // WAJIB dipanggil dulu
+        System.out.println("Proses tambahan khusus Child");
+    }
+}
 
 4. Bagaimana keyword super membantu membedakan atribut yang memiliki nama sama antara parent dan child?
+Jawaban:
+class Parent {
+    String nama = "Parent";
+}
+
+class Child extends Parent {
+    String nama = "Child";
+
+    void tampilkan() {
+        System.out.println(nama);        // Output: "Child" (atribut Child)
+        System.out.println(super.nama);  // Output: "Parent" (atribut Parent)
+    }
+}
 
 5. Mengapa pendekatan inheritance lebih efisien dibanding menyalin ulang seluruh atribut dan method ke dalam class Member?
+Jawaban:
+Efisiensi inheritance vs copy-paste:
+- Reusability: Tidak perlu menulis ulang kode yang sama
+- Maintainability: Perubahan di Customer otomatis berlaku ke Member
+- Consistency: Memastikan semua Member memiliki atribut dasar yang sama
+- Scalability: Mudah menambah jenis pelanggan baru (VIP, Corporate, dll)
+- Bug Reduction: Logika di Customer sudah teruji, tidak perlu testing ulang di Member
