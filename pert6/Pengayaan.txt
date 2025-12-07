@@ -2,7 +2,42 @@ Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 1. Apa itu abstract class dan Kenapa kita membutuhkan Abstarct class?
-2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek? 
+Jawaban:
+Abstract class adalah kelas yang tidak dapat diinstansiasi secara langsung dan dapat berisi method abstrak (tanpa implementasi) serta method konkret (dengan implementasi).
+Kita membutuhkan abstract class untuk:
+a. Menyediakan kerangka dasar (template) untuk kelas-kelas turunan
+b. Memaksa subclass untuk mengimplementasikan method tertentu
+c. Menerapkan konsep polimorfisme dengan lebih baik
+d. Membagi kode yang umum ke dalam abstract class untuk menghindari duplikasi
+
+2. Apa perbedaan utama antara abstract class dan class biasa dalam pemrograman berorientasi objek?
+Jawaban:
+- Abstract class tidak dapat diinstansiasi langsung dengan new, sedangkan class biasa bisa
+- Abstract class dapat memiliki method abstrak (tanpa implementasi), class biasa tidak
+- Abstract class digunakan sebagai parent class, sedangkan class biasa bisa berdiri sendiri
+- Abstract class biasanya mewakili konsep umum, sedangkan class biasa mewakili implementasi spesifik
+
 3. Mengapa subclass wajib mengimplementasikan semua abstract method dari parent class?
+Jawaban:
+Karena method abstrak hanya mendeklarasikan tanda tangan (signature) tanpa implementasi
+Java menerapkan aturan bahwa jika sebuah class mewarisi abstract class, maka class tersebut harus:
+a. Mengimplementasikan semua method abstrak, ATAU
+b. Menjadi abstract class juga
+Ini memastikan kontrak/interface yang ditetapkan oleh parent class dipenuhi oleh semua subclass
+
 4. Mengapa abstract method tidak boleh memiliki isi implementasi di dalam abstract class?
+Jawaban:
+Abstract method dirancang untuk didefinisikan perilakunya oleh subclass
+Implementasi akan berbeda-beda untuk setiap subclass
+Abstract class hanya mendefinisikan "apa yang harus dilakukan" bukan "bagaimana melakukannya"
+Ini mendukung konsep polimorfisme di mana setiap subclass dapat memiliki implementasi yang berbeda
+
 5. Bagaimana abstract class dapat mendukung konsep polimorfisme, dan mengapa objek yang direferensikan melalui tipe abstract class tetap dapat menjalankan perilaku berbeda pada masing-masing subclass?
+Jawaban:
+Abstract class mendukung polimorfisme melalui:
+a. Method overriding: subclass mengoverride method dari parent class
+b. Referensi bertipe abstract class dapat menunjuk ke objek subclass
+Meski direferensikan sebagai tipe abstract, saat runtime Java menggunakan dynamic method dispatch:
+KendaraanGalaksi kendaraan = new PesawatTempur(...);
+kendaraan.aktifkanMesin(); // Akan memanggil implementasi di PesawatTempur
+Java Virtual Machine (JVM) menentukan method mana yang akan dipanggil berdasarkan tipe aktual objek pada runtime, bukan tipe referensinya pada compile time.
