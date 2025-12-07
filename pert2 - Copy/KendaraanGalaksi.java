@@ -1,24 +1,17 @@
 public abstract class KendaraanGalaksi {
-
-    // ==========================================================
     // ATRIBUT/STATE (semua private)
-    // ==========================================================
     private String namaKendaraan;
     private int levelEnergi;
     private int kapasitasPenumpang;
 
-    // ==========================================================
     // CONSTRUCTOR
-    // ==========================================================
     public KendaraanGalaksi(String namaKendaraan, int kapasitasPenumpang) {
         this.namaKendaraan = namaKendaraan;
         this.kapasitasPenumpang = kapasitasPenumpang;
         this.levelEnergi = 100; // Default energy level
     }
 
-    // ==========================================================
     // GETTER
-    // ==========================================================
     public String getNamaKendaraan() {
         return namaKendaraan;
     }
@@ -31,9 +24,7 @@ public abstract class KendaraanGalaksi {
         return kapasitasPenumpang;
     }
 
-    // ==========================================================
     // SETTER (untuk mengubah level energi)
-    // ==========================================================
     protected void setLevelEnergi(int levelEnergi) {
         if (levelEnergi < 0) {
             this.levelEnergi = 0;
@@ -44,16 +35,12 @@ public abstract class KendaraanGalaksi {
         }
     }
 
-    // ==========================================================
     // METHOD BIASA
-    // ==========================================================
     public final void tampilStatus() {
         System.out.println(namaKendaraan + " | Energi: " + levelEnergi + "% | Kapasitas: " + kapasitasPenumpang + " awak");
     }
 
-    // ==========================================================
     // ABSTRACT METHOD (WAJIB DIIMPLEMENTASI SUBCLASS)
-    // ==========================================================
     public abstract void aktifkanMesin();
 
     public abstract void jelajah(int jarak);

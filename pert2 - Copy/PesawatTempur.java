@@ -1,21 +1,15 @@
 public class PesawatTempur extends KendaraanGalaksi {
 
-    // ==========================================================
     // ATRIBUT KHUSUS
-    // ==========================================================
     private int jumlahRudal;
 
-    // ==========================================================
     // CONSTRUCTOR
-    // ==========================================================
     public PesawatTempur(String namaKendaraan, int kapasitasPenumpang, int jumlahRudal) {
         super(namaKendaraan, kapasitasPenumpang);
         this.jumlahRudal = jumlahRudal;
     }
 
-    // ==========================================================
     // IMPLEMENTASI ABSTRACT METHOD
-    // ==========================================================
     @Override
     public void aktifkanMesin() {
         if (getLevelEnergi() < 20) {
@@ -44,9 +38,7 @@ public class PesawatTempur extends KendaraanGalaksi {
         System.out.println("Mengisi energi pesawat tempur sebesar " + jumlah + "%. Energi sekarang: " + getLevelEnergi() + "%");
     }
 
-    // ==========================================================
     // METHOD KHUSUS
-    // ==========================================================
     public void tembakRudal(int jumlah) {
         if (jumlahRudal >= jumlah) {
             jumlahRudal -= jumlah;

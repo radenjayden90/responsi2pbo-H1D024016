@@ -1,13 +1,8 @@
-public class KapalEksplorasi extends KendaraanGalaksi {
-
-    // ==========================================================
+class KapalEksplorasi extends KendaraanGalaksi {
     // ATRIBUT KHUSUS
-    // ==========================================================
     private int modulScan; // level 1-5
 
-    // ==========================================================
     // CONSTRUCTOR
-    // ==========================================================
     public KapalEksplorasi(String namaKendaraan, int kapasitasPenumpang, int modulScan) {
         super(namaKendaraan, kapasitasPenumpang);
         // Validasi modul scan antara 1-5
@@ -20,9 +15,7 @@ public class KapalEksplorasi extends KendaraanGalaksi {
         }
     }
 
-    // ==========================================================
     // IMPLEMENTASI ABSTRACT METHOD
-    // ==========================================================
     @Override
     public void aktifkanMesin() {
         if (getLevelEnergi() < 15) {
@@ -51,9 +44,7 @@ public class KapalEksplorasi extends KendaraanGalaksi {
         System.out.println("Mengisi energi kapal eksplorasi sebesar " + jumlah + "%. Energi sekarang: " + getLevelEnergi() + "%");
     }
 
-    // ==========================================================
     // METHOD KHUSUS
-    // ==========================================================
     public void scanPlanet(String namaPlanet) {
         System.out.println("Melakukan scan pada planet " + namaPlanet + " dengan modul level " + modulScan + ".");
     }

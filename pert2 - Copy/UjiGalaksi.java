@@ -2,9 +2,7 @@ public class UjiGalaksi {
     public static void main(String[] args) {
         System.out.println("=== UJI SISTEM KENDARAAN GALAKSI ===\n");
 
-        // ==========================================================
         // PEMBUATAN OBJEK
-        // ==========================================================
         System.out.println("--- PESAWAT TEMPUR ---");
         PesawatTempur pesawat = new PesawatTempur("Astra-Fury", 2, 8);
 
@@ -38,9 +36,7 @@ public class UjiGalaksi {
         // Tampilkan status kapal
         kapal.tampilStatus();
 
-        // ==========================================================
         // DEMONSTRASI POLIMORFISME
-        // ==========================================================
         System.out.println("\n=== DEMONSTRASI POLIMORFISME ===");
 
         KendaraanGalaksi[] armada = new KendaraanGalaksi[2];
