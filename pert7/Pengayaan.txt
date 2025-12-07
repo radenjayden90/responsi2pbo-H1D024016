@@ -2,7 +2,34 @@ Pertanyaan Refleksi
 Setelah menyelesaikan kode, jawab pertanyaan berikut:
 
 1. Apa perbedaan antara interface dengan class biasa?
+Jawaban:
+Perbedaan interface dengan class biasa:
+- Interface hanya berisi deklarasi method (tanpa implementasi), class biasa bisa berisi implementasi
+- Interface tidak bisa diinstansiasi langsung, class biasa bisa
+- Satu class bisa mengimplementasikan banyak interface, tapi hanya bisa extends satu class
+- Interface semua method default-nya public abstract, class biasa memiliki access modifier yang variatif
+
 2. Mengapa interface tidak memiliki implementasi method di dalamnya?
+Jawaban:
+- Interface berfungsi sebagai kontrak/spesifikasi yang harus diimplementasikan oleh class
+- Memungkinkan fleksibilitas implementasi yang berbeda-beda oleh masing-masing class
+- Menerapkan konsep abstraction yang tinggi
+
 3. Apa tujuan penggunaan keyword "implements" pada sebuah class?
+Jawaban:
+- Untuk menyatakan bahwa sebuah class akan mengimplementasikan/memenuhi kontrak dari interface
+- Memaksa class untuk menyediakan implementasi dari semua method yang dideklarasikan di interface
+
 4. Apakah sebuah class dapat mengimplementasikan lebih dari satu interface? Jelaskan dan berikan contoh sederhana.
+Jawaban:
+Ya, bisa. Contoh:
+public class SmartPhone implements Camera, Phone, GPS {
+    // implement semua method dari ketiga interface
+}
+
 5. Jika sebuah class mengimplementasikan interface, apa yang terjadi jika class tersebut tidak mengimplementasikan semua method dari interface tersebut?
+Jawaban:
+Jika class tidak mengimplementasikan semua method interface:
+- Compiler akan error
+- Class harus dideklarasikan sebagai abstract class jika tidak mengimplementasikan semua method
+- Atau class harus menyediakan implementasi untuk semua method abstract dari interface
