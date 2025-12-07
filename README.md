@@ -2,7 +2,7 @@
 
 **Dibuat oleh:** Zahratul Askia  
 **NIM:** H1D024016
-**Shift Baru:** I    
+**Shift Baru:** I
 **Shift KRS:** H-I
 
 ---
